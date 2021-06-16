@@ -21,7 +21,7 @@ var createWindow = function () {
     });
     if (isDev) {
         mainWindow.loadURL("http://localhost:3000");
-        mainWindow.webContents.openDevTools({ mode: "detach" });
+        mainWindow.webContents.openDevTools(); // mode: detach ?
     }
     else {
         mainWindow.loadFile(path.join(__dirname, "build/index.html"));

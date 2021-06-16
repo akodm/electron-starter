@@ -7,7 +7,7 @@ module.exports = {
     "@storybook/addon-actions",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-postcss"
+    "@storybook/preset-create-react-app"
   ],
   typescript: {
     reactDocgen: 'react-docgen-typescript',

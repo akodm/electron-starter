@@ -2,12 +2,19 @@ import { RecoilRoot } from 'recoil';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-import '../src/index.css';
 import "tailwindcss/tailwind.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const GlobalStyleReset = createGlobalStyle`
   ${reset}
+
+  a {
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export const decorators = [
