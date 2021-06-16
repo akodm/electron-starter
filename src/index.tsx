@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RecoilRoot } from 'recoil';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+
+import './index.css';
+import "tailwindcss/tailwind.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+const GlobalStyleReset = createGlobalStyle`
+  ${reset}
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <GlobalStyleReset />
+      <App />
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
 );
