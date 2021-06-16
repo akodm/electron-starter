@@ -1,4 +1,5 @@
 const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   stories: ['../src/stories/**/*.@(tsx|ts|jsx|js|)'],
@@ -6,7 +7,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-actions",
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y",
     "@storybook/preset-create-react-app"
   ],
   typescript: {
@@ -20,6 +20,25 @@ module.exports = {
   },
   webpackFinal: async (config) => {
     config.resolve.plugins.push(new TsConfigPathsPlugin({}));
+
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              ident: 'postcss',
+              plugins: [
+                require('tailwindcss'),
+                require('autoprefixer'),
+              ],
+            },
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../'),
+    });
 
     return config;
   },
