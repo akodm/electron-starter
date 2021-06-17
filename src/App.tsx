@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+// const electron = window.require('electron');
+
 function App() {
   return (
     <div className="App">

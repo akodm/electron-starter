@@ -16,7 +16,9 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
+      contextIsolation: false,
       devTools: isDev,
+      preload: __dirname + "/preload.ts",
     },
   });
 
@@ -25,6 +27,8 @@ const createWindow = () => {
 
     mainWindow.webContents.openDevTools(); // mode: detach ?
   } else {
+    // mainWindow.removeMenu();
+
     mainWindow.loadFile(path.join(__dirname, "build/index.html"));
   }
 

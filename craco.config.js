@@ -15,8 +15,13 @@ module.exports = {
       options: {
         source: "tsconfig",
         baseUrl: "./",
-        tsConfigPath: "./tsconfig.paths.json"
-      }
-    }
-  ]
+        tsConfigPath: "./tsconfig.paths.json",
+      },
+    },
+  ],
+  webpack: {
+    configure: {
+      target: 'electron-renderer',
+    },
+  },
 };
