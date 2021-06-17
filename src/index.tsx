@@ -12,6 +12,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const GlobalStyleReset = createGlobalStyle`
   ${reset}
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
   a {
     text-decoration: none;

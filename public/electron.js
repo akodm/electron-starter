@@ -7,7 +7,9 @@ var mainWindow;
 var createWindow = function () {
     mainWindow = new electron_1.BrowserWindow({
         width: 900,
+        minWidth: 500,
         height: 680,
+        minHeight: 300,
         center: true,
         // kiosk: false,
         resizable: true,
