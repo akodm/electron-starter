@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Routing from './pages/Routing';
 
 import { SideNavigation } from '@components/SideNavigation';
+import { Modal } from '@components/Modal';
 
 // const electron = window.require('electron');
 
@@ -19,6 +20,7 @@ const App = () => {
     <Container>
       <Routing />
       <SideNavigation />
+      <Modal />
     </Container>
   );
 }
